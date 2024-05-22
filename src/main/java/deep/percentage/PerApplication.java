@@ -2,14 +2,27 @@ package deep.percentage;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.stage.Stage;
 import java.io.IOException;
 
-public class HelloApplication extends Application {
+/**
+ * @author AmirJ0
+ * @since 2024-5-22
+ * Controller Class: {@link deep.percentage.PerController}
+ * Main class and javafx Application
+ * @version 1.0
+ */
+public class PerApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
-
+        FXMLLoader fxmlLoader = new FXMLLoader(PerApplication.class.getResource("per-view.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        stage.setScene(scene);
+        stage.setTitle("Percentage Application");
+        stage.setX(10);
+        stage.setY(10);
+        stage.show();
     }
 
     public static void main(String[] args) {
