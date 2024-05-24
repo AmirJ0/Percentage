@@ -14,6 +14,13 @@ import java.io.IOException;
  * @version 1.0
  */
 public class PerApplication extends Application {
+    /**
+     *
+     * @param stage the primary stage for this application, onto which
+     * the application scene can be set.
+     * Applications may create other stages, if needed, but they will not be
+     * primary stages.
+     */
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(PerApplication.class.getResource("per-view.fxml"));
@@ -23,9 +30,12 @@ public class PerApplication extends Application {
         stage.setX(10);
         stage.setY(10);
         stage.show();
+
     }
 
     public static void main(String[] args) {
         launch();
+
     }
+
 }
