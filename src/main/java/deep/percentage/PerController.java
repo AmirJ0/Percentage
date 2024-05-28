@@ -102,7 +102,7 @@ public class PerController implements Initializable {
 
             if ((trueMarkNum + falseMarkNum) > allMarkNum)
                 errorBox.setText("مقدار وارد شده نادرست است");
-            else if ((allMarkNum >= 1000 || allMarkNum < 0)&&(trueMarkNum < 0)&&(falseMarkNum > 0))
+            if ((allMarkNum >= 1000 || allMarkNum < 0)||(trueMarkNum < 0)||(falseMarkNum > 0))
                 errorBox.setText("مقدار وارد شده نادرست است");
             else
                 getResult(allMarkNum, trueMarkNum, falseMarkNum);

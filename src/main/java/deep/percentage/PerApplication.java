@@ -3,8 +3,10 @@ package deep.percentage;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import java.io.IOException;
+import java.util.Objects;
 
 /**
  * @author AmirJ0
@@ -27,6 +29,8 @@ public class PerApplication extends Application {
         Scene scene = new Scene(fxmlLoader.load());
         stage.setScene(scene);
         stage.setTitle("Percentage Application");
+        Image image = new Image(Objects.requireNonNull(getClass().getResourceAsStream("images/icon.png")));
+        stage.getIcons().add(image);
         stage.setX(10);
         stage.setY(10);
         stage.show();

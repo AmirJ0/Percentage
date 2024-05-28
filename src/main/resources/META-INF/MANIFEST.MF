@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Main-Class: deep.percentage.Launcher
+Created-By: AmirJ0
+JavaFX-Version: 21
+Name: Percentage
+Specification-Title: Percentage Apllication
+Specification-Version: 1.1
