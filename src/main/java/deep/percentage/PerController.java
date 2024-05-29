@@ -18,7 +18,7 @@ import java.util.ResourceBundle;
 /**
  * @author AmirJ0
  * @since 2024-5-22
- * @version 1.0
+ * @version 1.1
  */
 public class PerController implements Initializable {
 
@@ -55,7 +55,6 @@ public class PerController implements Initializable {
      */
     public void modeSelect(Event event){
         modeSelected = choiceMode.getValue();
-
     }
 
     /**
@@ -64,7 +63,7 @@ public class PerController implements Initializable {
      * Instance of java.awt.Desktop
      */
     public void githubLinkAction(){
-        Desktop desktop = java.awt.Desktop.getDesktop();
+        Desktop desktop = Desktop.getDesktop();
         try {
             URI githubUri = new URI("https://github.com/AmirJ0");
             desktop.browse(githubUri);
@@ -102,7 +101,7 @@ public class PerController implements Initializable {
 
             if ((trueMarkNum + falseMarkNum) > allMarkNum)
                 errorBox.setText("مقدار وارد شده نادرست است");
-            if ((allMarkNum >= 1000 || allMarkNum < 0)||(trueMarkNum < 0)||(falseMarkNum > 0))
+            else if ((allMarkNum >= 1000 || allMarkNum < 0)||(trueMarkNum < 0)||(falseMarkNum < 0))
                 errorBox.setText("مقدار وارد شده نادرست است");
             else
                 getResult(allMarkNum, trueMarkNum, falseMarkNum);
@@ -123,13 +122,16 @@ public class PerController implements Initializable {
      */
     public void getResult(double allMarksNum, double trueMarkNum, double falseMarkNum){
         double percent;
+        try {
+            if (modeSelected.equals("نمره منفی"))
+                percent = (3 * trueMarkNum - falseMarkNum) / (3 * allMarksNum) * 100;
+            else
+                percent = (trueMarkNum / allMarksNum) * 100;
+            result.setText(String.format("درصد شما: %.2f", percent));
 
-        if (modeSelected.equals("نمره منفی"))
-            percent = (3 * trueMarkNum - falseMarkNum) / (3 * allMarksNum) * 100;
-        else
-            percent = (trueMarkNum / allMarksNum) * 100;
-
-        result.setText(String.format("درصد شما: %.2f", percent));
+        } catch (NullPointerException e) {
+            errorBox.setText("یکی از حالت ها را انتخاب کنید");
+        }
 
     }
 

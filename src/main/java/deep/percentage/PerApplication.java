@@ -13,7 +13,7 @@ import java.util.Objects;
  * @since 2024-5-22
  * Controller Class: {@link deep.percentage.PerController}
  * Main class and javafx Application
- * @version 1.0
+ * @version 1.2
  */
 public class PerApplication extends Application {
     /**
@@ -29,6 +29,7 @@ public class PerApplication extends Application {
         Scene scene = new Scene(fxmlLoader.load());
         stage.setScene(scene);
         stage.setTitle("Percentage Application");
+        stage.setResizable(false);
         Image image = new Image(Objects.requireNonNull(getClass().getResourceAsStream("images/icon.png")));
         stage.getIcons().add(image);
         stage.setX(10);

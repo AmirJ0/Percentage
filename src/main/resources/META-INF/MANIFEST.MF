@@ -4,4 +4,4 @@ Created-By: AmirJ0
 JavaFX-Version: 21
 Name: Percentage
 Specification-Title: Percentage Apllication
-Specification-Version: 1.1
+Specification-Version: 1.2

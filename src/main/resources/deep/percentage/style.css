@@ -1,4 +1,4 @@
-.pane {
+.main-pane {
     -fx-background-color: #2A6062;
 }
 .vbox {
@@ -15,6 +15,9 @@
     -fx-border-color: #4b5f5f;
     -fx-border-radius: 50px;
 }
+.text-fields:hover{
+    -fx-background-color: #cfe2e2;
+}
 .calculate-button {
     -fx-font-family: IRANSansWeb;
     -fx-background-color: #5aa2a2;
@@ -24,7 +27,19 @@
     -fx-border-radius: 20px;
     -fx-background-radius: 20px;
 }
+.calculate-button:hover{
+    -fx-background-color: #579d9d;
+}
 .box {
     -fx-border-style: solid;
     -fx-border-color: transparent transparent black transparent;
+}
+.choice-box .label{
+    -fx-text-fill: white;
+}
+.menu-item{
+    -fx-background-color: #3e6d6d;
+}
+.menu-item:hover{
+    -fx-background-color: #498080;
 }
